@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:'Inter',sans-serif;background:#f5f2ec;color:#111;overflow-x:hidden;}
@@ -20,6 +22,7 @@
       background:rgba(245,242,236,0.92);backdrop-filter:blur(12px);
       border-bottom:1px solid rgba(0,0,0,0.05);
     }
+
     .nav-inner{display:flex;justify-content:space-between;align-items:center;}
     .logo{font-size:1.2rem;font-weight:700;letter-spacing:4px;}
     .nav-links{display:flex;gap:28px;font-size:.92rem;font-weight:500;}
@@ -30,12 +33,14 @@
     .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center;}
     .hero-text h1{font-size:6rem;line-height:.92;font-weight:700;letter-spacing:-4px;margin-bottom:30px;}
     .hero-text p{font-size:1.15rem;line-height:1.7;max-width:620px;color:#444;margin-bottom:40px;}
-    .hero-buttons{display:flex;gap:18px;flex-wrap:wrap;}
+
+    .hero-buttons{display:flex;gap:14px;flex-wrap:wrap;}
 
     .btn{
-      padding:16px 28px;border-radius:100px;font-size:.9rem;font-weight:600;
-      transition:.3s;border:none;cursor:pointer;
+      padding:16px 28px;border-radius:100px;font-size:.9rem;font-weight:700;
+      transition:.3s;border:none;cursor:pointer;letter-spacing:.3px;
     }
+
     .btn-dark{background:#111;color:#fff;}
     .btn-dark:hover{transform:translateY(-2px);opacity:.9;}
     .btn-light{background:#fff;color:#111;border:1px solid rgba(0,0,0,.08);}
@@ -49,33 +54,38 @@
     .section-sub{color:#555;max-width:700px;line-height:1.7;margin-bottom:60px;}
 
     .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;}
+
     .service-card{
       background:#fff;border-radius:28px;padding:40px;transition:.35s;
       border:1px solid rgba(0,0,0,.05);
     }
+
     .service-card:hover{transform:translateY(-6px);}
     .service-card h3{font-size:2rem;margin-bottom:16px;letter-spacing:-1px;}
     .price{font-size:1rem;font-weight:600;margin-bottom:20px;color:#666;}
     .service-card p{color:#555;line-height:1.7;margin-bottom:28px;}
 
-    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
-    .gallery-item{height:340px;border-radius:24px;overflow:hidden;background:#ddd;}
-    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:.4s;}
-    .gallery-item:hover img{transform:scale(1.04);}
-
     .social-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+
     .social-card{
       background:#fff;padding:28px;border-radius:22px;
       border:1px solid rgba(0,0,0,.05);transition:.3s;
     }
+
     .social-card:hover{transform:translateY(-4px);}
     .social-card h4{margin-bottom:10px;font-size:1.2rem;}
+    .social-card h4 i{margin-right:10px;}
     .social-card p{color:#555;line-height:1.6;font-size:.95rem;}
+
+    .merch-card{
+      max-width:520px;
+    }
 
     footer{
       padding:80px 0;text-align:center;
       border-top:1px solid rgba(0,0,0,.06);margin-top:100px;
     }
+
     footer p{color:#666;line-height:1.8;}
 
     @media(max-width:980px){
@@ -90,6 +100,8 @@
       .hero-text h1{font-size:3rem;}
       .section-title{font-size:2.2rem;}
       .hero-image{height:420px;}
+      .btn{width:100%;}
+      .hero-buttons a{width:100%;}
     }
   </style>
 </head>
@@ -123,17 +135,15 @@
           Branding, luxury kennel websites, banners, logos and modern creative content designed for brands that want to stand out online.
         </p>
 
-       <div class="hero-buttons">
+        <div class="hero-buttons">
+          <a href="#services">
+            <button class="btn btn-dark">VIEW SERVICES</button>
+          </a>
 
-  <a href="https://www.instagram.com/marckbarrera_art/" target="_blank">
-    <button class="btn btn-dark">INSTAGRAM</button>
-  </a>
-
-  <a href="https://m.me/marckbarrerart" target="_blank">
-    <button class="btn btn-light">FACEBOOK</button>
-  </a>
-
-</div>
+          <a href="https://www.instagram.com/marckbarrera_art/" target="_blank">
+            <button class="btn btn-light"><i class="fa-brands fa-instagram"></i> REQUEST QUOTE</button>
+          </a>
+        </div>
       </div>
 
       <div class="hero-image">
@@ -154,43 +164,58 @@
 
       <div class="services-grid">
 
-       <div class="hero-buttons">
+        <div class="service-card">
+          <h3>Logos</h3>
+          <div class="price">Starting at $150 USD</div>
+          <p>
+            Luxury logos, mascot branding, social branding and visual identity systems.
+          </p>
 
-  <a href="https://www.instagram.com/marckbarrera_art/" target="_blank">
-    <button class="btn btn-dark">INSTAGRAM</button>
-  </a>
+          <div class="hero-buttons">
+            <a href="https://www.instagram.com/marckbarrera_art/" target="_blank">
+              <button class="btn btn-dark"><i class="fa-brands fa-instagram"></i> Instagram</button>
+            </a>
 
-  <a href="https://m.me/marckbarrerart" target="_blank">
-    <button class="btn btn-light">FACEBOOK</button>
-  </a>
-
-</div>
+            <a href="https://m.me/marckbarrerart" target="_blank">
+              <button class="btn btn-light"><i class="fa-brands fa-facebook-f"></i> Facebook</button>
+            </a>
+          </div>
         </div>
 
-        <div class="hero-buttons">
+        <div class="service-card">
+          <h3>Banners</h3>
+          <div class="price">Starting at $50 USD</div>
+          <p>
+            Promotional graphics, social media banners, event flyers, kennel ads and visual campaign content.
+          </p>
 
-  <a href="https://www.instagram.com/marckbarrera_art/" target="_blank">
-    <button class="btn btn-dark">INSTAGRAM</button>
-  </a>
+          <div class="hero-buttons">
+            <a href="https://www.instagram.com/marckbarrera_art/" target="_blank">
+              <button class="btn btn-dark"><i class="fa-brands fa-instagram"></i> Instagram</button>
+            </a>
 
-  <a href="https://m.me/marckbarrerart" target="_blank">
-    <button class="btn btn-light">FACEBOOK</button>
-  </a>
-
-</div>
+            <a href="https://m.me/marckbarrerart" target="_blank">
+              <button class="btn btn-light"><i class="fa-brands fa-facebook-f"></i> Facebook</button>
+            </a>
+          </div>
         </div>
 
-       <div class="hero-buttons">
+        <div class="service-card">
+          <h3>Websites</h3>
+          <div class="price">Starting at $300 USD</div>
+          <p>
+            Modern mobile-friendly websites for kennels, creative brands, artists and businesses.
+          </p>
 
-  <a href="https://www.instagram.com/marckbarrera_art/" target="_blank">
-    <button class="btn btn-dark">INSTAGRAM</button>
-  </a>
+          <div class="hero-buttons">
+            <a href="https://www.instagram.com/marckbarrera_art/" target="_blank">
+              <button class="btn btn-dark"><i class="fa-brands fa-instagram"></i> Instagram</button>
+            </a>
 
-  <a href="https://m.me/marckbarrerart" target="_blank">
-    <button class="btn btn-light">FACEBOOK</button>
-  </a>
-
-</div>
+            <a href="https://m.me/marckbarrerart" target="_blank">
+              <button class="btn btn-light"><i class="fa-brands fa-facebook-f"></i> Facebook</button>
+            </a>
+          </div>
         </div>
 
       </div>
@@ -206,10 +231,7 @@
         Selected visuals, branding projects and creative work from MBA Studio.
       </p>
 
-      <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-b3afa251-34b5-4e3f-8cef-b09cdcd1219e" data-elfsight-app-lazy></div>
-    
+      <!-- Aquí puedes meter después screenshots, logos o links de demos. -->
 
     </div>
   </section>
@@ -227,28 +249,28 @@
 
         <a href="https://www.instagram.com/marckbarrera_art/" target="_blank">
           <div class="social-card">
-            <h4>Instagram</h4>
+            <h4><i class="fa-brands fa-instagram"></i> Instagram</h4>
             <p>Daily visuals, branding work and creative content.</p>
           </div>
         </a>
 
         <a href="https://www.facebook.com/marckbarrerart/" target="_blank">
           <div class="social-card">
-            <h4>Facebook</h4>
+            <h4><i class="fa-brands fa-facebook-f"></i> Facebook</h4>
             <p>Project updates, kennel branding and business related content.</p>
           </div>
         </a>
 
         <a href="https://www.youtube.com/@MarckBarreraArt" target="_blank">
           <div class="social-card">
-            <h4>YouTube</h4>
+            <h4><i class="fa-brands fa-youtube"></i> YouTube</h4>
             <p>Creative process videos and visual experiments.</p>
           </div>
         </a>
 
         <a href="https://www.tiktok.com/@marckbarreraart" target="_blank">
           <div class="social-card">
-            <h4>TikTok</h4>
+            <h4><i class="fa-brands fa-tiktok"></i> TikTok</h4>
             <p>Short-form creative content, edits and visual showcases.</p>
           </div>
         </a>
@@ -257,21 +279,16 @@
     </div>
   </section>
 
- <section id="merch">
+  <section id="merch">
+    <div class="container">
 
-  <div class="container">
+      <h2 class="section-title">Merch</h2>
 
-    <h2 class="section-title">
-      Merch
-    </h2>
+      <p class="section-sub">
+        Selected products and curated picks available through the MBA Studio Amazon storefront.
+      </p>
 
-    <p class="section-sub">
-      Selected products and curated picks available through the MBA Studio Amazon storefront.
-    </p>
-
-    <div class="services-grid">
-
-      <div class="service-card">
+      <div class="service-card merch-card">
 
         <h3>Amazon Storefront</h3>
 
@@ -284,20 +301,49 @@
         </p>
 
         <a href="https://www.amazon.com/shop/marckbarrera_art/list/2VHM2KQA44ULL?ref_=aip_sf_list_spv_ofs_mixed_d" target="_blank">
-
-          <button class="btn btn-dark">
-            VISIT STOREFRONT
-          </button>
-
+          <button class="btn btn-dark">VISIT STOREFRONT</button>
         </a>
 
       </div>
 
     </div>
+  </section>
 
-  </div>
+  <section id="contact">
+    <div class="container">
 
-</section>
+      <h2 class="section-title">Request Quote</h2>
+
+      <p class="section-sub">
+        Please contact MBA Studio before sending any payment. Every project is different and final pricing depends on the scope of work.
+      </p>
+
+      <div class="social-grid">
+
+        <a href="https://www.instagram.com/marckbarrera_art/" target="_blank">
+          <div class="social-card">
+            <h4><i class="fa-brands fa-instagram"></i> Instagram DM</h4>
+            <p>Best for visual references and quick communication.</p>
+          </div>
+        </a>
+
+        <a href="https://m.me/marckbarrerart" target="_blank">
+          <div class="social-card">
+            <h4><i class="fa-brands fa-facebook-f"></i> Facebook Messenger</h4>
+            <p>Great for kennel websites and business inquiries.</p>
+          </div>
+        </a>
+
+        <div class="social-card">
+          <h4><i class="fa-brands fa-paypal"></i> Payments via PayPal</h4>
+          <p>
+            Approved projects are invoiced directly through PayPal after consultation.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <footer>
     <div class="container">
