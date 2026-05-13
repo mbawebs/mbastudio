@@ -7,444 +7,113 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    body{
-      font-family:'Inter',sans-serif;
-      background:#f5f2ec;
-      color:#111;
-      overflow-x:hidden;
-    }
-
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
-
-    .container{
-      width:90%;
-      max-width:1400px;
-      margin:auto;
-    }
-
-    /* NAV */
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:#f5f2ec;color:#111;overflow-x:hidden;}
+    a{text-decoration:none;color:inherit;}
+    .container{width:90%;max-width:1400px;margin:auto;}
 
     nav{
-      width:100%;
-      padding:28px 0;
-      position:sticky;
-      top:0;
-      z-index:999;
-      background:rgba(245,242,236,0.92);
-      backdrop-filter:blur(12px);
+      width:100%;padding:28px 0;position:sticky;top:0;z-index:999;
+      background:rgba(245,242,236,0.92);backdrop-filter:blur(12px);
       border-bottom:1px solid rgba(0,0,0,0.05);
     }
+    .nav-inner{display:flex;justify-content:space-between;align-items:center;}
+    .logo{font-size:1.2rem;font-weight:700;letter-spacing:4px;}
+    .nav-links{display:flex;gap:28px;font-size:.92rem;font-weight:500;}
+    .nav-links a{opacity:.7;transition:.3s;}
+    .nav-links a:hover{opacity:1;}
 
-    .nav-inner{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-
-    .logo{
-      font-size:1.2rem;
-      font-weight:700;
-      letter-spacing:4px;
-    }
-
-    .nav-links{
-      display:flex;
-      gap:28px;
-      font-size:.92rem;
-      font-weight:500;
-    }
-
-    .nav-links a{
-      opacity:.7;
-      transition:.3s;
-    }
-
-    .nav-links a:hover{
-      opacity:1;
-    }
-
-    /* HERO */
-
-    .hero{
-      min-height:92vh;
-      display:flex;
-      align-items:center;
-      padding:120px 0 80px;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.2fr 1fr;
-      gap:60px;
-      align-items:center;
-    }
-
-    .hero-text h1{
-      font-size:6rem;
-      line-height:.92;
-      font-weight:700;
-      letter-spacing:-4px;
-      margin-bottom:30px;
-    }
-
-    .hero-text p{
-      font-size:1.15rem;
-      line-height:1.7;
-      max-width:620px;
-      color:#444;
-      margin-bottom:40px;
-    }
-
-    .hero-buttons{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-    }
+    .hero{min-height:92vh;display:flex;align-items:center;padding:120px 0 80px;}
+    .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center;}
+    .hero-text h1{font-size:6rem;line-height:.92;font-weight:700;letter-spacing:-4px;margin-bottom:30px;}
+    .hero-text p{font-size:1.15rem;line-height:1.7;max-width:620px;color:#444;margin-bottom:40px;}
+    .hero-buttons{display:flex;gap:18px;flex-wrap:wrap;}
 
     .btn{
-      padding:16px 28px;
-      border-radius:100px;
-      font-size:.9rem;
-      font-weight:600;
-      transition:.3s;
-      border:none;
-      cursor:pointer;
+      padding:16px 28px;border-radius:100px;font-size:.9rem;font-weight:600;
+      transition:.3s;border:none;cursor:pointer;
     }
+    .btn-dark{background:#111;color:#fff;}
+    .btn-dark:hover{transform:translateY(-2px);opacity:.9;}
+    .btn-light{background:#fff;color:#111;border:1px solid rgba(0,0,0,.08);}
+    .btn-light:hover{transform:translateY(-2px);background:#ece8e0;}
 
-    .btn-dark{
-      background:#111;
-      color:#fff;
-    }
+    .hero-image{width:100%;height:720px;border-radius:36px;overflow:hidden;background:#ddd;}
+    .hero-image img{width:100%;height:100%;object-fit:cover;}
 
-    .btn-dark:hover{
-      transform:translateY(-2px);
-      opacity:.9;
-    }
+    section{padding:120px 0;}
+    .section-title{font-size:3rem;margin-bottom:18px;letter-spacing:-2px;}
+    .section-sub{color:#555;max-width:700px;line-height:1.7;margin-bottom:60px;}
 
-    .btn-light{
-      background:#fff;
-      color:#111;
-      border:1px solid rgba(0,0,0,.08);
-    }
-
-    .btn-light:hover{
-      transform:translateY(-2px);
-      background:#ece8e0;
-    }
-
-    .hero-image{
-      width:100%;
-      height:720px;
-      border-radius:36px;
-      overflow:hidden;
-      background:#ddd;
-    }
-
-    .hero-image img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    /* SECTION */
-
-    section{
-      padding:120px 0;
-    }
-
-    .section-title{
-      font-size:3rem;
-      margin-bottom:18px;
-      letter-spacing:-2px;
-    }
-
-    .section-sub{
-      color:#555;
-      max-width:700px;
-      line-height:1.7;
-      margin-bottom:60px;
-    }
-
-    /* SERVICES */
-
-    .services-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:28px;
-    }
-
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;}
     .service-card{
-      background:#fff;
-      border-radius:28px;
-      padding:40px;
-      transition:.35s;
+      background:#fff;border-radius:28px;padding:40px;transition:.35s;
       border:1px solid rgba(0,0,0,.05);
     }
+    .service-card:hover{transform:translateY(-6px);}
+    .service-card h3{font-size:2rem;margin-bottom:16px;letter-spacing:-1px;}
+    .price{font-size:1rem;font-weight:600;margin-bottom:20px;color:#666;}
+    .service-card p{color:#555;line-height:1.7;margin-bottom:28px;}
 
-    .service-card:hover{
-      transform:translateY(-6px);
-    }
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
+    .gallery-item{height:340px;border-radius:24px;overflow:hidden;background:#ddd;}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:.4s;}
+    .gallery-item:hover img{transform:scale(1.04);}
 
-    .service-card h3{
-      font-size:2rem;
-      margin-bottom:16px;
-      letter-spacing:-1px;
-    }
-
-    .price{
-      font-size:1rem;
-      font-weight:600;
-      margin-bottom:20px;
-      color:#666;
-    }
-
-    .service-card p{
-      color:#555;
-      line-height:1.7;
-      margin-bottom:28px;
-    }
-
-    /* GALLERY */
-
-    .gallery-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:18px;
-    }
-
-    .gallery-item{
-      height:340px;
-      border-radius:24px;
-      overflow:hidden;
-      background:#ddd;
-    }
-
-    .gallery-item img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      transition:.4s;
-    }
-
-    .gallery-item:hover img{
-      transform:scale(1.04);
-    }
-
-    /* SOCIAL */
-
-    .social-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:20px;
-    }
-
+    .social-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
     .social-card{
-      background:#fff;
-      padding:28px;
-      border-radius:22px;
-      border:1px solid rgba(0,0,0,.05);
-      transition:.3s;
+      background:#fff;padding:28px;border-radius:22px;
+      border:1px solid rgba(0,0,0,.05);transition:.3s;
     }
-
-    .social-card:hover{
-      transform:translateY(-4px);
-    }
-
-    .social-card h4{
-      margin-bottom:10px;
-      font-size:1.2rem;
-    }
-
-    .social-card p{
-      color:#555;
-      line-height:1.6;
-      font-size:.95rem;
-    }
-
-    /* FOOTER */
+    .social-card:hover{transform:translateY(-4px);}
+    .social-card h4{margin-bottom:10px;font-size:1.2rem;}
+    .social-card p{color:#555;line-height:1.6;font-size:.95rem;}
 
     footer{
-      padding:80px 0;
-      text-align:center;
-      border-top:1px solid rgba(0,0,0,.06);
-      margin-top:100px;
+      padding:80px 0;text-align:center;
+      border-top:1px solid rgba(0,0,0,.06);margin-top:100px;
     }
-
-    footer p{
-      color:#666;
-      line-height:1.8;
-    }
-
-    /* MOBILE */
+    footer p{color:#666;line-height:1.8;}
 
     @media(max-width:980px){
-
-      .hero-grid{
-        grid-template-columns:1fr;
-      }
-
-      .hero-text h1{
-        font-size:4rem;
-      }
-
-      .hero-image{
-        height:520px;
-      }
-
-      .nav-links{
-        display:none;
-      }
-
+      .hero-grid{grid-template-columns:1fr;}
+      .hero-text h1{font-size:4rem;}
+      .hero-image{height:520px;}
+      .nav-links{display:none;}
     }
 
     @media(max-width:600px){
-
-      .hero{
-        padding-top:70px;
-      }
-
-      .hero-text h1{
-        font-size:3rem;
-      }
-
-      .section-title{
-        font-size:2.2rem;
-      }
-
-      .hero-image{
-        height:420px;
-      }
-
+      .hero{padding-top:70px;}
+      .hero-text h1{font-size:3rem;}
+      .section-title{font-size:2.2rem;}
+      .hero-image{height:420px;}
     }
-
   </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
-
   <nav>
     <div class="container nav-inner">
-
-      <div class="logo">
-        MBA STUDIO
-      </div>
+      <div class="logo">MBA STUDIO</div>
 
       <div class="nav-links">
         <a href="#services">Services</a>
         <a href="#gallery">Gallery</a>
-<!-- MERCH -->
-
-<section id="merch">
-
-  <div class="container">
-
-    <h2 class="section-title">
-      Merch
-    </h2>
-
-    <p class="section-sub">
-      Selected products, apparel and creative picks curated by MBA Studio.
-    </p>
-
-    <div class="services-grid">
-
-      <div class="service-card">
-
-        <h3>Studio Apparel</h3>
-
-        <div class="price">
-          Available on Amazon
-        </div>
-
-        <p>
-          Hoodies, shirts and lifestyle apparel inspired by creative culture and modern visuals.
-        </p>
-
-        <a href="https://amazon.com" target="_blank">
-          <button class="btn btn-dark">
-            BUY ON AMAZON
-          </button>
-        </a>
-
-      </div>
-
-      <div class="service-card">
-
-        <h3>Creative Gear</h3>
-
-        <div class="price">
-          Available on Amazon
-        </div>
-
-        <p>
-          Studio accessories, desk setups, creative tools and selected products used by MBA Studio.
-        </p>
-
-        <a href="https://amazon.com" target="_blank">
-          <button class="btn btn-dark">
-            BUY ON AMAZON
-          </button>
-        </a>
-
-      </div>
-
-      <div class="service-card">
-
-        <h3>Featured Picks</h3>
-
-        <div class="price">
-          Available on Amazon
-        </div>
-
-        <p>
-          Handpicked products, collectibles and aesthetic items recommended by MBA Studio.
-        </p>
-
-        <a href="https://https://www.amazon.com/shop/marckbarrera_art/list/2VHM2KQA44ULL?ref_=aip_sf_list_spv_ofs_mixed_d" target="_blank">
-          <button class="btn btn-dark">
-            BUY ON AMAZON
-          </button>
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
         <a href="#social">Social</a>
-        <section id="contact">
+        <a href="#merch">Merch</a>
         <a href="#contact">Contact</a>
       </div>
-
     </div>
   </nav>
 
-  <!-- HERO -->
-
   <section class="hero">
-
     <div class="container hero-grid">
 
       <div class="hero-text">
-
         <h1>
           Creative<br>
           Visual Studio
@@ -455,21 +124,14 @@
         </p>
 
         <div class="hero-buttons">
-
           <a href="#services">
-            <button class="btn btn-dark">
-              VIEW SERVICES
-            </button>
+            <button class="btn btn-dark">VIEW SERVICES</button>
           </a>
 
           <a href="#contact">
-            <button class="btn btn-light">
-              REQUEST QUOTE
-            </button>
+            <button class="btn btn-light">REQUEST QUOTE</button>
           </a>
-
         </div>
-
       </div>
 
       <div class="hero-image">
@@ -477,18 +139,12 @@
       </div>
 
     </div>
-
   </section>
 
-  <!-- SERVICES -->
-
   <section id="services">
-
     <div class="container">
 
-      <h2 class="section-title">
-        Services
-      </h2>
+      <h2 class="section-title">Services</h2>
 
       <p class="section-sub">
         Every project is custom made. Final pricing depends on the complexity, revisions and overall scope of the work.
@@ -497,118 +153,65 @@
       <div class="services-grid">
 
         <div class="service-card">
-
           <h3>Logos</h3>
-
-          <div class="price">
-            Starting at $150 USD
-          </div>
-
+          <div class="price">Starting at $150 USD</div>
           <p>
-            Selected visuals, branding projects and creative work from MBA Studio.
+            Luxury logos, mascot branding, social branding and visual identity systems.
           </p>
-
           <a href="#contact">
-            <button class="btn btn-dark">
-              REQUEST QUOTE
-            </button>
+            <button class="btn btn-dark">REQUEST QUOTE</button>
           </a>
-
         </div>
 
         <div class="service-card">
-
           <h3>Banners</h3>
-
-          <div class="price">
-            Starting at $50 USD
-          </div>
-
+          <div class="price">Starting at $50 USD</div>
           <p>
             Promotional graphics, social media banners, event flyers, kennel ads and visual campaign content.
           </p>
-
           <a href="#contact">
-            <button class="btn btn-dark">
-              REQUEST QUOTE
-            </button>
+            <button class="btn btn-dark">REQUEST QUOTE</button>
           </a>
-
         </div>
 
         <div class="service-card">
-
           <h3>Websites</h3>
-
-          <div class="price">
-            Starting at $300 USD
-          </div>
-
+          <div class="price">Starting at $300 USD</div>
           <p>
             Modern mobile-friendly websites for kennels, creative brands, artists and businesses.
           </p>
-
           <a href="#contact">
-            <button class="btn btn-dark">
-              REQUEST QUOTE
-            </button>
+            <button class="btn btn-dark">REQUEST QUOTE</button>
           </a>
-
         </div>
 
       </div>
-
     </div>
-
   </section>
 
-  <!-- GALLERY -->
-
   <section id="gallery">
-
     <div class="container">
 
-      <h2 class="section-title">
-        Gallery
-      </h2>
+      <h2 class="section-title">Gallery</h2>
 
       <p class="section-sub">
-        Selected visuals, branding projects, AI concepts and creative work from MBA Studio.
+        Selected visuals, branding projects and creative work from MBA Studio.
       </p>
 
       <div class="gallery-grid">
-
-        <div class="gallery-item">
-          <img src="images/gallery1.jpg" alt="">
-        </div>
-
-        <div class="gallery-item">
-          <img src="images/gallery2.jpg" alt="">
-        </div>
-
-        <div class="gallery-item">
-          <img src="images/gallery3.jpg" alt="">
-        </div>
-
-        <div class="gallery-item">
-          <img src="images/gallery4.jpg" alt="">
-        </div>
-
+        <div class="gallery-item"><img src="images/gallery1.jpg" alt=""></div>
+        <div class="gallery-item"><img src="images/gallery2.jpg" alt=""></div>
+        <div class="gallery-item"><img src="images/gallery3.jpg" alt=""></div>
+        <div class="gallery-item"><img src="images/gallery4.jpg" alt=""></div>
       </div>
 
     </div>
-
   </section>
 
-  <!-- SOCIAL -->
-
   <section id="social">
-
     <div class="container">
 
-      <h2 class="section-title">
-        Social Media
-      </h2>
+      <h2 class="section-title">Social Media</h2>
 
       <p class="section-sub">
         Follow the process, behind the scenes content and latest projects across all platforms.
@@ -617,76 +220,89 @@
       <div class="social-grid">
 
         <a href="https://www.instagram.com/marckbarrera_art/" target="_blank">
-
           <div class="social-card">
-
             <h4>Instagram</h4>
-
-            <p>
-              Daily visuals, branding work and creative content.
-            </p>
-
+            <p>Daily visuals, branding work and creative content.</p>
           </div>
-
         </a>
 
         <a href="https://www.facebook.com/marckbarrerart/" target="_blank">
-
           <div class="social-card">
-
             <h4>Facebook</h4>
-
-            <p>
-              Project updates, kennel branding and business related content.
-            </p>
-
+            <p>Project updates, kennel branding and business related content.</p>
           </div>
-
         </a>
 
         <a href="https://www.youtube.com/@MarckBarreraArt" target="_blank">
-
           <div class="social-card">
-
             <h4>YouTube</h4>
-
-            <p>
-              Creative process videos, visual experiments.
-            </p>
-
+            <p>Creative process videos and visual experiments.</p>
           </div>
-
         </a>
 
         <a href="https://www.tiktok.com/@marckbarreraart" target="_blank">
-
           <div class="social-card">
-
             <h4>TikTok</h4>
-
-            <p>
-              Short-form creative content, edits and visual showcases.
-            </p>
-
+            <p>Short-form creative content, edits and visual showcases.</p>
           </div>
-
         </a>
 
       </div>
-
     </div>
-
   </section>
 
-  <!-- CONTACT -->
-
-  <section id="contact">
-
+  <section id="merch">
     <div class="container">
 
-      <h2 class="section-title">
-        Request Quote
-      </h2>
+      <h2 class="section-title">Merch</h2>
+
+      <p class="section-sub">
+        Selected products, apparel and creative picks curated by MBA Studio.
+      </p>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+          <h3>Studio Apparel</h3>
+          <div class="price">Available on Amazon</div>
+          <p>
+            Hoodies, shirts and lifestyle apparel inspired by creative culture and modern visuals.
+          </p>
+          <a href="https://www.amazon.com/shop/marckbarrera_art/list/2VHM2KQA44ULL?ref_=aip_sf_list_spv_ofs_mixed_d" target="_blank">
+            <button class="btn btn-dark">BUY ON AMAZON</button>
+          </a>
+        </div>
+
+        <div class="service-card">
+          <h3>Creative Gear</h3>
+          <div class="price">Available on Amazon</div>
+          <p>
+            Studio accessories, desk setup items, creative tools and selected products used by MBA Studio.
+          </p>
+          <a href="https://www.amazon.com/shop/marckbarrera_art/list/2VHM2KQA44ULL?ref_=aip_sf_list_spv_ofs_mixed_d" target="_blank">
+            <button class="btn btn-dark">BUY ON AMAZON</button>
+          </a>
+        </div>
+
+        <div class="service-card">
+          <h3>Featured Picks</h3>
+          <div class="price">Available on Amazon</div>
+          <p>
+            Handpicked products, collectibles and aesthetic items recommended by MBA Studio.
+          </p>
+          <a href="https://www.amazon.com/shop/marckbarrera_art/list/2VHM2KQA44ULL?ref_=aip_sf_list_spv_ofs_mixed_d" target="_blank">
+            <button class="btn btn-dark">BUY ON AMAZON</button>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+
+      <h2 class="section-title">Request Quote</h2>
 
       <p class="section-sub">
         Please contact MBA Studio before sending any payment. Every project is different and final pricing depends on the scope of work.
@@ -694,75 +310,38 @@
 
       <div class="social-grid">
 
-        <a href="https://instagram.com" target="_blank">
-
+        <a href="https://www.instagram.com/marckbarrera_art/" target="_blank">
           <div class="social-card">
-
             <h4>Instagram DM</h4>
-
-            <p>
-              Best for visual references and quick communication.
-            </p>
-
+            <p>Best for visual references and quick communication.</p>
           </div>
-
         </a>
 
-        <a href="https://m.me/" target="_blank">
-
+        <a href="https://m.me/marckbarrerart" target="_blank">
           <div class="social-card">
-
             <h4>Facebook Messenger</h4>
-
-            <p>
-              Great for kennel websites and business inquiries.
-            </p>
-
+            <p>Great for kennel websites and business inquiries.</p>
           </div>
-
         </a>
 
         <div class="social-card">
-
-  <h4>Payments via PayPal</h4>
-
-  <p>
-    Approved projects are invoiced directly through PayPal after consultation.
-  </p>
-
-</div>
-
-          <div class="social-card">
-
-            <h4>Approved Payments</h4>
-
-            <p>
-              Only send payment after your project has been approved by MBA Studio.
-            </p>
-
-          </div>
-
-        </a>
+          <h4>Payments via PayPal</h4>
+          <p>
+            Approved projects are invoiced directly through PayPal after consultation.
+          </p>
+        </div>
 
       </div>
-
     </div>
-
   </section>
 
-  <!-- FOOTER -->
-
   <footer>
-
     <div class="container">
-
       <p>
         MBA STUDIO © 2026<br>
-        Creative visuals, branding, AI and modern digital design.
+        Creative visuals, branding and modern digital design.
       </p>
-
     </div>
-
   </footer>
 
 </body>
